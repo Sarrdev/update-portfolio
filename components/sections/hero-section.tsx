@@ -41,7 +41,7 @@ export function HeroSection() {
               transition={{ delay: 0.3 }}
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold mb-6"
             >
-              Bonjour, je suis{' '}
+
               <span className="text-gradient">Mamadou Sarr</span>
             </motion.h1>
 
