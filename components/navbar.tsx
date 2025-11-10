@@ -1,19 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { useTheme } from 'next-themes';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { href: '#accueil', label: 'Accueil' },
-  { href: '#apropos', label: 'À propos' },
-  { href: '#competences', label: 'Compétences' },
-  { href: '#projets', label: 'Projets' },
-  { href: '#outils', label: 'Outils' },
-  { href: '#contact', label: 'Contact' },
+  { href: "#accueil", label: "Accueil" },
+  { href: "#apropos", label: "À propos" },
+  { href: "#competences", label: "Compétences" },
+  { href: "#projets", label: "Projets" },
+  { href: "#outils", label: "Outils" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -29,8 +29,8 @@ export function Navbar() {
       setScrolled(window.scrollY > 50);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   if (!mounted) return null;
@@ -39,12 +39,12 @@ export function Navbar() {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? 'bg-background/80 backdrop-blur-lg border-b shadow-lg'
-          : 'bg-transparent'
+          ? "bg-background/80 backdrop-blur-lg border-b shadow-lg"
+          : "bg-transparent"
       )}
     >
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,10 +76,10 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="rounded-full"
             >
-              {theme === 'dark' ? (
+              {theme === "dark" ? (
                 <Sun className="h-5 w-5" />
               ) : (
                 <Moon className="h-5 w-5" />
@@ -92,7 +92,11 @@ export function Navbar() {
               className="lg:hidden"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </Button>
           </div>
         </div>
@@ -102,23 +106,32 @@ export function Navbar() {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden bg-background/95 backdrop-blur-lg border-b"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.button
                   key={link.href}
-                  href={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-2"
-                  onClick={() => setIsOpen(false)}
+                  className="text-left text-lg font-medium text-foreground/80 hover:text-primary transition-colors py-2"
+                  onClick={() => {
+                    // Fermer le menu
+                    setIsOpen(false);
+                    // Scroll fluide vers la section
+                    const target = document.querySelector(link.href);
+                    if (target) {
+                      setTimeout(() => {
+                        target.scrollIntoView({ behavior: "smooth" });
+                      }, 300); // petit délai pour que le rideau ait le temps de se fermer
+                    }
+                  }}
                 >
                   {link.label}
-                </motion.a>
+                </motion.button>
               ))}
             </div>
           </motion.div>
