@@ -62,13 +62,9 @@ export function AboutSection() {
                   avec un accent sur la performance et l'expérience utilisateur.
                 </p>
                 <p className="text-base sm:text-lg leading-relaxed text-foreground/80 mb-6">
-                  Actuellement développeur full stack chez <span className="font-semibold text-primary">SGF SARL</span> à Touba,
+                  Actuellement développeur full stack chez <span className="font-semibold text-primary">SGF SARL</span>,
                   je contribue à la création de systèmes de gestion d'hydrocarbures robustes et évolutifs.
                 </p>
-                <div className="flex items-center gap-2 text-muted-foreground">
-                  <MapPin className="w-5 h-5" />
-                  <span className="text-sm sm:text-base">Touba, Sénégal</span>
-                </div>
               </CardContent>
             </Card>
           </motion.div>
