@@ -8,12 +8,6 @@ import { Badge } from '@/components/ui/badge';
 
 const projects = [
   {
-    title: 'Application de préinscription en ligne',
-    description: 'Plateforme complète pour gérer les préinscriptions des étudiants à l\'Institut Polytechnique Thomas Sankara. Interface intuitive avec gestion des documents et suivi en temps réel.',
-    tech: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript'],
-    color: 'from-blue-500 to-cyan-500',
-  },
-  {
     title: 'Application de gestion des hydrocarbures',
     description: 'Système de gestion robuste pour SGF SARL, incluant suivi des stocks, facturation automatisée, et génération de rapports détaillés.',
     tech: ['Laravel', 'React', 'MySQL', 'Chart.js'],
@@ -30,6 +24,12 @@ const projects = [
     description: 'Plateforme moderne permettant la publication et la gestion d’informations internes pour l’entreprise SGF SARL. Projet intégrant une interface intuitive et des fonctionnalités avancées de gestion de contenu.',
     tech: ['Nextjs', 'Laravel', 'MySQL', 'TailwindCSS'],
     color: 'from-green-500 to-emerald-500',
+  },
+  {
+    title: 'Application de préinscription en ligne',
+    description: 'Plateforme complète pour gérer les préinscriptions des étudiants à l\'Institut Polytechnique Thomas Sankara. Interface intuitive avec gestion des documents et suivi en temps réel.',
+    tech: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript'],
+    color: 'from-blue-500 to-cyan-500',
   },
 ];
 
