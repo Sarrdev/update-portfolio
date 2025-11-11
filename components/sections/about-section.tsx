@@ -14,7 +14,7 @@ const milestones = [
   {
     icon: GraduationCap,
     title: 'Génie Logiciel',
-    subtitle: 'Institut Polytechnique Thomas Sankara',
+    subtitle: 'Institut Polytechnique de Dakar Thomas Sankara',
     color: 'from-primary to-purple-500',
   },
   {

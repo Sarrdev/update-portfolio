@@ -27,7 +27,7 @@ const projects = [
   },
   {
     title: 'Application de préinscription en ligne',
-    description: 'Plateforme complète pour gérer les préinscriptions des étudiants à l\'Institut Polytechnique Thomas Sankara. Interface intuitive avec gestion des documents et suivi en temps réel.',
+    description: 'Plateforme complète pour gérer les préinscriptions des étudiants à l\'Institut Polytechnique de Dakar Thomas Sankara. Interface intuitive avec gestion des documents et suivi en temps réel.',
     tech: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript'],
     color: 'from-blue-500 to-cyan-500',
   },
